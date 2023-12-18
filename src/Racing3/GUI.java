@@ -82,6 +82,7 @@ public class GUI {
 		jframe.setLocationRelativeTo(null);
 		jframe.addKeyListener(ctr);
 		jframe.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		System.out.println("Helllo word");
 		for(;;) {	//점수
 			s_val++;
 			score_v.setText(s_val + " ");
