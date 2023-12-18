@@ -35,6 +35,7 @@ public class GUI {
 	}
 	
 	public void initGUI() {
+		System.out.println("this is test");
 		int s_val = 0;
 		jframe = new JFrame("Car Racing");
 		jframe.setLayout(null);
