@@ -12,12 +12,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 class Menu extends JFrame implements ActionListener {
-	private JButton s_button;
-	private JButton sc_button;
-	private JLabel label1;
-	private JLabel label2;
-	private JLabel label3;
-	private JLabel bg;
+
+	List<JLabel> labels;
+	List<JButton> buttons;
 
 	
 	public Menu() {
@@ -54,6 +51,19 @@ class Menu extends JFrame implements ActionListener {
 		this.add(panel);
 		this.setVisible(true);
 	}
+
+	JPanel setPanel(String name, int x, int y, int width, int height){
+		//setbounds 까지
+	}
+
+	JButton setButton(String name, ActionListener ac){
+		//addActionListener 까지
+	}
+
+	void addComponents(List<JLabel> labels, List<JButton> buttons, JPanel panel){
+
+	}
+
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
