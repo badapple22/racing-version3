@@ -13,14 +13,16 @@ import Racing3.Menu;
 
 class Menu extends JFrame implements ActionListener {
 	
-	List<JLabel> labels;
-	List<JButton> buttons;
+	JLabel title;
+	JButton startButton;
+	JButton scoreButton;
 	public Menu() {
 		JPanel panel = new JPanel();
+		panel.setLayout(null);
 		this.setSize(500, 800);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.setTitle("레이싱 게임");
-		setLabel(panel);
+		 setLabel(panel);
 		setButtons(panel);
 		this.add(panel);
 		this.setVisible(true);
@@ -28,20 +30,23 @@ class Menu extends JFrame implements ActionListener {
 	}
 
 	void setLabel(JPanel panel){
-		JLabel title = new JLabel("Racing Game");
+		JLabel t = new JLabel("Racing Game");
+		this.title = t;
 		title.setBounds(190, 250, 250, 30);
 		title.setFont(new Font("serif", Font.BOLD, 21));
 		panel.add(title);
 	}
 
 	void setButtons(JPanel panel){
-		JButton startButton = new JButton("start");
+		JButton stb = new JButton("start");
+		this.startButton = stb;
 		startButton.setFont(new Font("serif", Font.CENTER_BASELINE, 30));
 		startButton.setBounds(190, 400, 122, 40);
 		startButton.addActionListener(this);
 		panel.add(startButton);
 
-		JButton scoreButton = new JButton("score");
+		JButton scb = new JButton("score");
+		this.scoreButton = scb;
 		scoreButton.setBounds(190, 500, 122, 40);
 		scoreButton.setFont(new Font("serif", Font.CENTER_BASELINE, 30));
 		scoreButton.addActionListener(this);
@@ -51,15 +56,17 @@ class Menu extends JFrame implements ActionListener {
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		String buttonType = e.getSource().toString();
+		String buttonType = e.getActionCommand();
+		System.out.println(buttonType);
 
 		switch (buttonType) {
-			case "startButton":
-				System.out.println("Start button");;
+			case "start":
+			System.out.println("start button");
 				break;
-			case "scoreButton":
-				System.out.println("score button");
-				break;
+
+			case "score":
+			System.out.println("score button");
+			break;
 			default:
 				break;
 		}
