@@ -68,7 +68,7 @@ class Menu extends JFrame implements ActionListener {
 		//button setbounds해주는함수
 	}
 	
-	
+	/*
 	JPanel setPanel(List<JLabel>, int x, int y, int width, int height){
 		//name.setBounds(x, y, width, height);
 		//for문
@@ -76,7 +76,7 @@ class Menu extends JFrame implements ActionListener {
 		//setbounds 까지
 		
 	}
-	
+	*/
 
 	void setButton(JButton button){
 		button.addActionListener(this);
