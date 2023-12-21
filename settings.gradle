@@ -8,4 +8,4 @@
  */
 
 rootProject.name = 'racing-version3'
-// include('app')
+include('app')

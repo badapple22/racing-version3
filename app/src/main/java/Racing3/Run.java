@@ -31,7 +31,19 @@ public class Run extends JFrame implements InputDelegate, ActionListener, MenuDe
 	void playGame(){
 		getContentPane().removeAll();
 		bg = new BackgroundImage();
-		player = new Player(100, 600, "player");
+		player = new Player(100, 600, "player"){
+			@Override
+			public void run() {
+				while(!gameOver){
+					try{
+						Thread.sleep(100);
+					} catch (InterruptedException e){
+						e.printStackTrace();
+					}
+					setBounds(point.x, point.y, iconWidth, iconHeight);
+				}
+			}
+		};
 		Citizen citizen1 = new Citizen(100, 0, "citizen"){
 			@Override
 			public void run() {
@@ -66,16 +78,19 @@ public class Run extends JFrame implements InputDelegate, ActionListener, MenuDe
 				}
 			}
 		};
+		bg.add(player);
 		bg.add(citizen1);
 		bg.add(citizen2);
 		add(bg);
 
 		Thread thBg = new Thread(bg);
+		Thread thPlayer = new Thread(player);
 		Thread thCitizen1 = new Thread(citizen1);
 		Thread thCitizen2 = new Thread(citizen2);
 
 
 		thBg.start();
+		thPlayer.start();
 		thCitizen1.start();
 		thCitizen2.start();
 
@@ -149,12 +164,12 @@ public class Run extends JFrame implements InputDelegate, ActionListener, MenuDe
 
 	@Override
 	public void moveLeft() {
-		player.point.x -= 10;
+		player.point.x -= 50;
 	}
 
 	@Override
 	public void moveRight() {
-		player.point.y -= 10;
+		player.point.x += 50;
 	}
 
 

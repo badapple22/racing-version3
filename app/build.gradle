@@ -16,6 +16,7 @@ java {
     sourceCompatibility = 19
 }
 
+
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
@@ -40,7 +41,7 @@ application {
     mainClass = 'racing3.Run'
 }
 
-//project("RacingGame")
+
 
 version = "0.0.1-SNAPHOT"
 
