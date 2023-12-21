@@ -37,8 +37,12 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass = 'racing3.App'
+    mainClass = 'racing3.Run'
 }
+
+//project("RacingGame")
+
+version = "0.0.1-SNAPHOT"
 
 tasks.named('test') {
     // Use JUnit Platform for unit tests.
