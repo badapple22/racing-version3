@@ -1,10 +1,6 @@
 package Racing3.DBModel;
 
-import lombok.*;
 
-
-@Getter
-@Setter
 public class ScoreModel {
     private int Id;
     private int Score;

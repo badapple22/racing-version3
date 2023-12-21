@@ -14,7 +14,7 @@ public class ScoreDao {
     private Connection conn;
     private Statement stmt;
 
-    void setConnecction(){
+    void setConnection(){
         try{
             Class.forName(driver);
             conn = DriverManager.getConnection(url, id, passwd);
@@ -68,6 +68,6 @@ public class ScoreDao {
     }
 
     ScoreDao(){
-        setConnecction();
+        setConnection();
     }
 }
