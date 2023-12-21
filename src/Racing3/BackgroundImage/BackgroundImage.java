@@ -1,4 +1,4 @@
-package Racing3;
+package Racing3.BackgroundImage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 
-public class background extends JFrame implements move {
+import Racing3.BackgroundImage.Input.*;
+
+public class BackgroundImage extends JFrame implements move {
     public static String RESOURCE_PATH = "app/src/main/resources/";
     List<Image> images;
 
@@ -83,7 +85,7 @@ public class background extends JFrame implements move {
 
 
 
-    background(){
+    BackgroundImage(){
         makeList();
 
         input.delegate = this;
@@ -102,7 +104,7 @@ public class background extends JFrame implements move {
     }
 
     public static void main(String[] args) {
-        background test = new background();
+        BackgroundImage test = new BackgroundImage();
 
     }
 }

@@ -1,4 +1,4 @@
-package movingbackground.Input;
+package Racing3.BackgroundImage.Input;
 
 import java.awt.event.*;
 
