@@ -111,8 +111,15 @@ public class GUI {
 //부스터 추가
 //컴퓨터 추가
 //2인?
+	
 	//라벨로 바꾸기
-
-
+	
+//racing3 사용자 - 이클립스 workspace 폴더에서 racing 3 
+// git bash 클ㄹ릭
+//git 업뎃
+//git commit -m "hello word"
+//git push
+//git add .
+	//git pull 가져오기
 
 }

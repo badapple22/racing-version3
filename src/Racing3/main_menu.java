@@ -21,12 +21,13 @@ class Menu extends JFrame implements ActionListener {
 	
 	List<JLabel> labels;
 	List<JButton> buttons;
-	JPanel panel = new JPanel();
+	
 	public Menu() {
 		this.setSize(500, 800);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.setTitle("레이싱 게임");
-		
+		this.setTitle("Racing Game");
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
 		for(int i = 0; i < 2; i++) {
 			add_label(labels);
 		}
@@ -34,19 +35,7 @@ class Menu extends JFrame implements ActionListener {
 		for(int i = 0; i < 2; i++) {
 			add_button(buttons);
 		}
-		labels = (List<JLabel>) new JLabel("Racing Game");
-		((JComponent) labels).setForeground(Color.green);
-		((JComponent) labels).setFont(new Font("Serif", Font.BOLD, 21));
-		labels = (List<JLabel>) new JLabel("", new ImageIcon("menu_bg.png"),JLabel.CENTER);	
-		((AbstractButton) buttons).addActionListener(this);		//?
-		label_bounds(labels, 0,0,500,800);	//배경
-		((AbstractButton) buttons).addActionListener(this);		//?
-		label_bounds(labels,190, 250, 122, 30);	//제목
-		button_bounds(buttons, 190, 400, 122, 30);
-		button_bounds(buttons, 190, 500, 122, 30);
-		addComponents(labels, buttons, panel);
-		this.add(panel);
-		this.setVisible(true);
+		
 		
 	}
 	
@@ -58,34 +47,42 @@ class Menu extends JFrame implements ActionListener {
 		buttons.add(new JButton());
 	}
 	
-	void label_bounds(List<JLabel> labels, int x, int y, int width, int height) {
-		((Component) labels).setBounds(x, y, width, height);
+	void addComponents(List<JLabel> labels, List<JButton> buttons, JPanel panel){
+		int labelSize = labels.size();
+		int buttonSize = buttons.size();
+		for(int i = 0; i < labelSize; i++) {
+			panel.add(labels.get(i));
+		}
+		for(int i = 0; i < buttonSize; i++) {
+			panel.add(buttons.get(i));
+		}
+	}
+	
+	void label_bounds(JLabel label, int x, int y, int width, int height) {
+		label.setBounds(x, y, width, height);
 		//label setbounds해주는함수
 	}
 	
-	void button_bounds(List<JButton> buttons, int x, int y, int width, int height) {
-		((Component) buttons).setBounds(x, y, width, height);
+	void button_bounds(JButton button, int x, int y, int width, int height) {
+		button.setBounds(x, y, width, height);
 		//button setbounds해주는함수
 	}
 	
-	JPanel setPanel(JPanel panel, int x, int y, int width, int height){
+	
+	JPanel setPanel(List<JLabel>, int x, int y, int width, int height){
 		//name.setBounds(x, y, width, height);
+		//for문
 		return null;
 		//setbounds 까지
 		
 	}
+	
 
-	JButton setButton(List<JButton> buttons, ActionListener ac){
-		//buttons.ac(this);
-		return null;
-		//addActionListener 까지
+	void setButton(JButton button){
+		button.addActionListener(this);
 	}
 
-	void addComponents(List<JLabel> labels, List<JButton> buttons, JPanel panel){
-		panel.setLayout(null);	//add panel 함수
-		panel.add((Component) buttons);
-		panel.add((Component) labels);
-	}
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -101,6 +98,8 @@ public class main_menu {
 	}
 
 }
-
+//상대방 생성
+// 충돌
+// 
 //라벨 리스트, add함수, panel함수
 //setbound 함수
